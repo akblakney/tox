@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from help import show_help
 import sys
 import json
 import os
@@ -67,6 +68,10 @@ if __name__ == '__main__':
 
   action = sys.argv[1]
 
+  if action in ['h', '-h', '--help']:
+    show_help()
+    exit()
+
   if action == 'a':
     if n < 4:
       raise BaseException('not enough arguments for add action')
@@ -87,5 +92,8 @@ if __name__ == '__main__':
       show_categories(j)
     else:
       show_category(j, sys.argv[2])
+
+  else:
+    raise BaseException('invalid action')
     
   write_json(FILE, j)
