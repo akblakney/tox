@@ -28,9 +28,14 @@ def show_category(j, category):
   for i in range(len(j[category])):
     print('{}. {}'.format(i, j[category][i]))
 
+# show them in alphabetical order
 def show_categories(j):
+  categories = []
   for category in j:
-    print(category)
+    categories.append(category)
+  categories.sort()
+  for c in categories:
+    print(c)
 
 def remove(j, category, index=None):
 
