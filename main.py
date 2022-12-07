@@ -34,8 +34,10 @@ def show_categories(j):
   for category in j:
     categories.append(category)
   categories.sort()
+
+  # print out list of categories with how many items they contain
   for c in categories:
-    print(c)
+    print('{} {}'.format(c, len(j[c])))
 
 def remove(j, category, index=None):
 
